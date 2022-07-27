@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataCapturing.Views.NewDonation">
+    <ContentPage.Content>
+        <StackLayout  Padding="10" Margin="0,20,0,0" >
+
+        
+
+            <Entry Placeholder="Enter First Name or Company Name" PlaceholderColor="Black" TextColor="Black" x:Name="EntName"/>
+            <Entry Placeholder="Enter type of Donation" PlaceholderColor="Black" TextColor="Black" x:Name="EntType"/>
+            <Entry Placeholder="Proof of payment reciept number" PlaceholderColor="Black" MaxLength="10"  TextColor="Black" x:Name="EntProof"/>
+            <Entry Placeholder="Enter Location" PlaceholderColor="Black" TextColor="Black" x:Name="EntLocation"/>
+          
+            <Picker Title="Choose beneficiary Type"  TextColor="Black" x:Name="PickerType">
+                <Picker.Items>
+                    <x:String>Ophans</x:String>
+                    <x:String>Unemployeed</x:String>
+                    <x:String>Elderly</x:String>
+                    <x:String>Widow</x:String>
+                    <x:String>Single Mom</x:String>
+                </Picker.Items>
+            </Picker>
+            <Grid HorizontalOptions="FillAndExpand" Margin="0,50,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Submit" x:Name="btnSave" HorizontalOptions="FillAndExpand"
+BackgroundColor="#0C1F4B" TextColor="#fff"
+Margin="2" Grid.Column="0" Grid.Row="0" Clicked="btnSave_Clicked" />
+
+                <Button Text="CLEAR" x:Name="btnClear" HorizontalOptions="FillAndExpand"
+BackgroundColor="red" TextColor="#fff"
+Margin="2" Grid.Column="1" Grid.Row="0" Clicked="btnClear_Clicked" />
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

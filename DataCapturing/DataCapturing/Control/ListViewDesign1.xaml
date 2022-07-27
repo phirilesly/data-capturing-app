@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataCapturing.Control.ListViewDesign1">
+    <ContentView.Content>
+        <StackLayout Padding="5" >
+            <Frame x:Name="frame" HasShadow="True" CornerRadius="20" Padding="0">
+                <Grid HorizontalOptions="FillAndExpand" BackgroundColor="White" VerticalOptions="FillAndExpand" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0"  Spacing="0" WidthRequest="100" BackgroundColor="Purple" Padding="10" >
+                        <Label Text="25" FontAttributes="Bold" FontSize="20" TextColor="White" 
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="Center"></Label>
+                        <Label Text="October"  TextColor="White" HorizontalOptions="Center" VerticalOptions="StartAndExpand" ></Label>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand" Padding="10" VerticalOptions="FillAndExpand">
+                        <Label Text="{Binding Type}" FontAttributes="Bold" TextColor="Black"></Label>
+                        <Label Text="{Binding Beneficiary}" TextColor="Black"></Label>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView> 

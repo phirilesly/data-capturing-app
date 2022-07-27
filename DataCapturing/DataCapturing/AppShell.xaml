@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:DataCapturing.Views" 
+       xmlns:local1="clr-namespace:DataCapturing.Control"
+       Title="DataCapturing"
+       x:Class="DataCapturing.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+   
+    -->
+
+
+ 
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#0C1F4B" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#0C1F4B" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+               
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+
+            <!--
+            Default Styles for all Flyout Items
+            https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyoutitem-and-menuitem-style-classes
+            -->
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#0C1F4B" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!--
+            Custom Style you can apply to any Flyout Item
+            -->
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources> 
+
+    <!-- 
+        When the Flyout is visible this defines the content to display in the flyout.
+        FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
+        https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
+   
+    -->
+
+    <Shell.FlyoutHeader>
+        <local1:HeaderContentView/>
+    </Shell.FlyoutHeader>
+
+    <TabBar>
+        <ShellContent Route="WelcomePage" ContentTemplate="{DataTemplate local:WelcomePage}" />
+    </TabBar>
+
+  
+    
+    
+    <FlyoutItem Title="MyTabApp"
+               Shell.TabBarIsVisible="False"
+               FlyoutDisplayOptions="AsMultipleItems">
+
+
+        <Tab Title="Dashboard"  Icon="home.png">
+        <ShellContent Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
+    </Tab>
+    <Tab Title="Recipients" Icon="recipients.png" >
+            <ShellContent Route="RecipientsPage" ContentTemplate="{DataTemplate local:RecipientsPage}" />
+        </Tab>
+    <Tab Title="Donations" Icon="donations.png" >
+            <ShellContent Route="DonationsPage" ContentTemplate="{DataTemplate local:DonationsPage}" />
+        </Tab>
+        <Tab Title="About" Icon="help.png">
+            <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        </Tab>
+
+
+    </FlyoutItem>
+
+    
+
+    <FlyoutItem Title="MyDashboard"
+               Shell.TabBarIsVisible="False"
+               FlyoutDisplayOptions="AsMultipleItems">
+
+        <Tab  Title="Logout">
+          
+        </Tab>
+
+    </FlyoutItem>
+
+
+
+
+    <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
+   
+
+    <!--
+        TabBar lets you define content that won't show up in a flyout menu. When this content is active
+        the flyout menu won't be available. This is useful for creating areas of the application where 
+        you don't want users to be able to navigate away from. If you would like to navigate to this 
+        content you can do so by calling 
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+        <ShellContent Route="RegistrationPage" ContentTemplate="{DataTemplate local:RegistrationPage}" />
+    </TabBar>
+    <TabBar>
+        <ShellContent Route="MyTaskPage" ContentTemplate="{DataTemplate local:MyTaskPage}" />
+    </TabBar>
+    <TabBar >
+        <ShellContent Route="OrphansPage" ContentTemplate="{DataTemplate local:OrphansPage}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="NewOrphanPage" ContentTemplate="{DataTemplate local:NewOrphanPage}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="AFCAList" ContentTemplate="{DataTemplate local:AFCAList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="CareList" ContentTemplate="{DataTemplate local:CareList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="UnisefList" ContentTemplate="{DataTemplate local:UnisefList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="SearchPage" ContentTemplate="{DataTemplate local:SearchPage}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="DataCaptureRegistration" ContentTemplate="{DataTemplate local:DataCaptureRegistration}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="DataCaptureHome" ContentTemplate="{DataTemplate local:DataCaptureHome}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="CharityOrgRegistration" ContentTemplate="{DataTemplate local:CharityOrgRegistration}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="CharityOrgHome" ContentTemplate="{DataTemplate local:CharityOrgHome}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="DonorRegistration" ContentTemplate="{DataTemplate local:DonorRegistration}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="DonorHome" ContentTemplate="{DataTemplate local:DonorHome}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="CouncillorRegistration" ContentTemplate="{DataTemplate local:CouncillorRegistration}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="CouncillorHome" ContentTemplate="{DataTemplate local:CouncillorHome}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="AdminRegistration" ContentTemplate="{DataTemplate local:AdminRegistration}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="RegisterCharityOrganization" ContentTemplate="{DataTemplate local:RegisterCharityOrganization}" />
+    </TabBar>
+    <TabBar>
+        <ShellContent Route="ResetPassword" ContentTemplate="{DataTemplate local:ResetPassword}" />
+    </TabBar>
+
+
+    <TabBar>
+        <ShellContent Route="UsersList" ContentTemplate="{DataTemplate local:UsersList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="RecievingList" ContentTemplate="{DataTemplate local:RecievingList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="OfficialsList" ContentTemplate="{DataTemplate local:OfficialsList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="OrgList" ContentTemplate="{DataTemplate local:OrgList}" />
+    </TabBar>
+    <TabBar>
+        <ShellContent Route="DonorList" ContentTemplate="{DataTemplate local:DonorList}" />
+    </TabBar>
+    <TabBar>
+        <ShellContent Route="DonationList" ContentTemplate="{DataTemplate local:DonationList}" />
+    </TabBar>
+    <TabBar>
+        <ShellContent Route="CapturerList" ContentTemplate="{DataTemplate local:CapturerList}" />
+    </TabBar>
+    <TabBar>
+        <ShellContent Route="NewDonation" ContentTemplate="{DataTemplate local:NewDonation}" />
+    </TabBar>
+    <TabBar>
+        <ShellContent Route="ReportsPage" ContentTemplate="{DataTemplate local:ReportsPage}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="AdminBeneficiaryList" ContentTemplate="{DataTemplate local:AdminBeneficiaryList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="AdminDonationList" ContentTemplate="{DataTemplate local:AdminDonationList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="AdminDonorList" ContentTemplate="{DataTemplate local:AdminDonorList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="AdminOfficialList" ContentTemplate="{DataTemplate local:AdminOfficialList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="AdminOrganizationList" ContentTemplate="{DataTemplate local:AdminOrganizationList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="AdminCalender" ContentTemplate="{DataTemplate local:AdminCalender}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="AdminEditBeneficiary" ContentTemplate="{DataTemplate local:AdminEditBeneficiary}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="CharityOrgDonation" ContentTemplate="{DataTemplate local:CharityOrgDonation}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="CharityOrgDonorList" ContentTemplate="{DataTemplate local:CharityOrgDonorList}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="CouncillorDonationList" ContentTemplate="{DataTemplate local:CouncillorDonationList}" />
+    </TabBar>
+
+
+
+
+
+
+    <!-- Optional Templates 
+    // These may be provided inline as below or as separate classes.
+
+    // This header appears at the top of the Flyout.
+    // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#flyout-header
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid>ContentHere</Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    // ItemTemplate is for ShellItems as displayed in a Flyout
+    // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#define-flyoutitem-appearance
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <ContentView>
+                Bindable Properties: Title, Icon
+            </ContentView>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    // MenuItemTemplate is for MenuItems as displayed in a Flyout
+    // https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/flyout#define-menuitem-appearance
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <ContentView>
+                Bindable Properties: Text, Icon
+            </ContentView>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
+    -->
+
+</Shell>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataCapturing.Views.WelcomePage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="	#0C1F4B"
+             >
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0"  BackgroundColor="#0C1F4B"  HasShadow="False" >
+                <Image Source="sol2.jpg" Aspect="AspectFill" Margin="-20" ></Image>
+            </Frame>
+
+            <Label Grid.Row="2" Text="Distribution Application" FontAttributes="Bold" TextColor="White" FontSize="25" HorizontalOptions="CenterAndExpand"></Label>
+            <Label Grid.Row="3" HorizontalOptions="CenterAndExpand" Text="Help you record and capture data easily and allocate you the necessary results."  TextColor="white" FontSize="14"></Label>
+           
+            <Button Grid.Row="5" Text="Get Started"  WidthRequest="60" HeightRequest="60" Margin="0,30,0,0" TextColor="White" BackgroundColor="#0047b3" CornerRadius="30"  Clicked="Button_Clicked"></Button>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

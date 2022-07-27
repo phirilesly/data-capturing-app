@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataCapturing.Views.DonorRegistration">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Margin="0,-10,0,10" Source="sol2.jpg" Aspect="AspectFit" HeightRequest="100" WidthRequest="50"></Image>
+            <Frame Grid.Row="1" Margin="0,-120,0,0" BorderColor="#1C375C" HasShadow="True"   HeightRequest="100">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,10,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"  Text="Register" FontSize="24" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                    <Label Grid.Row="1" Margin="0,-15,0,0" Text="Create donor account" TextColor="#1C375C"  HorizontalOptions="CenterAndExpand"></Label>
+                    <Entry Grid.Row="2" Placeholder="FirstName" PlaceholderColor="Black" TextColor="Black" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="EntFirstName"></Entry>
+                    <Entry Grid.Row="3" Placeholder="LastName" PlaceholderColor="Black" TextColor="Black"  Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="EntLastName"></Entry>
+                    <Entry Grid.Row="4" Placeholder="Phone" MaxLength="10" Keyboard="Numeric" PlaceholderColor="Black" TextColor="Black" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="EntPhone"></Entry>
+                    <Entry Grid.Row="5" Placeholder="Email" PlaceholderColor="Black" TextColor="Black" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="EntEmail"></Entry>
+                    <Entry Grid.Row="6" Placeholder="Password" PlaceholderColor="Black" TextColor="Black" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="EntPassword"></Entry>
+                    <Entry Grid.Row="7" Placeholder="Confirm Password" PlaceholderColor="Black" TextColor="Black" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="EntCPassword"></Entry>
+                    <Button Grid.Row="8" Text="Register" Margin="0,30,0,0" BackgroundColor="#1C375C" CornerRadius="20" Clicked="Button_Clicked"></Button>
+
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

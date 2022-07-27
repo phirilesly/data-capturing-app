@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataCapturing.Views.CharityOrgHome"   xmlns:fontawesome="clr-namespace:DataCapturing.Models" 
+             xmlns:control="clr-namespace:DataCapturing.Control"
+           BackgroundColor="#0C1F4B"
+             Title="Home">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Padding="20" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+
+            <Grid  HeightRequest="200"  Grid.Row="0">
+                <Image Opacity="0.8" Margin="-25,-25,-25,20" Source="bluebackground.png"
+                           Aspect="AspectFill" ></Image>
+                <StackLayout Spacing="10" VerticalOptions="Start" Padding="20">
+                    <Label  HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"  Text="Notices"></Label>
+                    <Label  HorizontalOptions="Center" Margin="0,40,0,0" TextColor="White" Text="28 Donations made today"></Label>
+                    <Label  HorizontalOptions="Center" TextColor="White" Text="Date for the session 2022-22-07"></Label>
+                </StackLayout>
+            </Grid>
+
+            <Label Grid.Row="1" Margin="60,0,0,0"  Text="Menu" TextColor="White" FontSize="18" FontAttributes="Bold"></Label>
+
+
+            <Frame Grid.Row="3"  HasShadow="True" Margin="0,10,0,0" CornerRadius="20" HeightRequest="90">
+                <Grid VerticalOptions="Center" ColumnDefinitions="*,2,*">
+                    <control:ImageButton  Grid.Row="0" Grid.Column="0"  Clicked="Donation_Clicked" Text="Make Donations" Icon="{x:Static fontawesome:Solid.Gift }" />
+                    <BoxView Grid.Row="0" Grid.Column="1"  BackgroundColor="#0047b3"></BoxView>
+                    <control:ImageButton  Grid.Row="0" Grid.Column="2" Clicked="DonorListImageButton_Clicked" Text="Donors List" Icon="{x:Static fontawesome:Solid.Users}"/>
+                
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="4" HasShadow="True" Margin="0,10,0,0" CornerRadius="20" HeightRequest="90">
+                <Grid VerticalOptions="Center" ColumnDefinitions="*,2,*">
+                    <control:ImageButton Grid.Row="0" Grid.Column="0" Clicked="CapturerListImageButton_Clicked" Text="Capturer Data" Icon="{x:Static fontawesome:Solid.Edit}"/>
+                    <BoxView Grid.Row="0" Grid.Column="1"  BackgroundColor="#0047b3"></BoxView>
+                    <control:ImageButton  Grid.Row="0" Grid.Column="2" Clicked="HelpImageButton_Clicked" Text="Help" Icon="{x:Static fontawesome:Solid.Question}"/>
+          
+                </Grid>
+            </Frame>
+
+        
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

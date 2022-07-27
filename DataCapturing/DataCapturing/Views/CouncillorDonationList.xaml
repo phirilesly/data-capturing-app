@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:DataCapturing.Control"
+             x:Class="DataCapturing.Views.CouncillorDonationList"
+    Title="Recieving List"
+             Shell.NavBarHasShadow="False"
+              NavigationPage.HasBackButton="True"
+             >
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <StackLayout Padding="20,10">
+                <Frame HasShadow="True" BorderColor="{Binding HeaderColor}" CornerRadius="20">
+                    <Grid RowDefinitions="35,Auto,Auto,1,Auto" RowSpacing="10">
+                        <BoxView Grid.Row="0" BackgroundColor="#0C1F4B" Margin="-20,-20,-20,0"></BoxView>
+                        <Label Grid.Row="0" Text="Hunger Relief Money" TextColor="White" FontAttributes="Bold"></Label>
+                        <Label Grid.Row="1" Text="Money from donors towards hunger" TextColor="#202020"></Label>
+                        <Label Grid.Row="2" Text="07/08/2022" TextColor="#202020"></Label>
+                        <BoxView Grid.Row="3" BackgroundColor="Gray"></BoxView>
+                        <Button Grid.Row="4" Text="View Recieving List"  TextColor="White" Clicked="AFCAButton_Clicked"></Button>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Padding="20,5">
+                <Frame HasShadow="True" BorderColor="{Binding HeaderColor}" CornerRadius="20">
+                    <Grid RowDefinitions="35,Auto,Auto,1,Auto" RowSpacing="10">
+                        <BoxView Grid.Row="0" BackgroundColor="#0C1F4B" Margin="-20,-20,-20,0"></BoxView>
+                        <Label Grid.Row="0" Text="Hunger Relief Food" TextColor="White" FontAttributes="Bold"></Label>
+                        <Label Grid.Row="1" Text="Food contributed by donors towards hunger" TextColor="#202020"></Label>
+                        <Label Grid.Row="2" Text="07/08/2022" TextColor="#202020"></Label>
+                        <BoxView Grid.Row="3" BackgroundColor="Gray"></BoxView>
+                        <Button Grid.Row="4" Text="View Recieving List"  TextColor="White" Clicked="CareButton_Clicked"></Button>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Padding="20,5">
+                <Frame HasShadow="True" BorderColor="{Binding HeaderColor}" CornerRadius="20">
+                    <Grid RowDefinitions="35,Auto,Auto,1,Auto" RowSpacing="10">
+                        <BoxView Grid.Row="0" BackgroundColor="#0C1F4B" Margin="-20,-20,-20,0"></BoxView>
+                        <Label Grid.Row="0" Text="Famers equipment" TextColor="White" FontAttributes="Bold"></Label>
+                        <Label Grid.Row="1" Text="Equipment donated towards helping farmers" TextColor="#202020"></Label>
+                        <Label Grid.Row="2" Text="07/08/2022" TextColor="#202020"></Label>
+                        <BoxView Grid.Row="3" BackgroundColor="Gray"></BoxView>
+                        <Button Grid.Row="4" Text="View Recieving List"  TextColor="White" Clicked="UNICEFButton_Clicked"></Button>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 

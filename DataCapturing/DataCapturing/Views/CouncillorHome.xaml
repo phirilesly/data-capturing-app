@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataCapturing.Views.CouncillorHome"   xmlns:fontawesome="clr-namespace:DataCapturing.Models" 
+             xmlns:control="clr-namespace:DataCapturing.Control"
+             BackgroundColor="#0C1F4B"
+             Title="Home">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Padding="20" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+
+            <Grid  HeightRequest="200"  Grid.Row="0">
+                <Image Opacity="0.8" Margin="-25,-25,-25,20" Source="bluebackground.png"
+                           Aspect="AspectFill" ></Image>
+                <StackLayout Spacing="10" VerticalOptions="Start" Padding="20">
+                    <Label  HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"  Text="Notices"></Label>
+                    <Label  HorizontalOptions="Center" Margin="0,40,0,0" TextColor="White" Text="Donation Ready to be delivered"></Label>
+                    <Label  HorizontalOptions="Center" TextColor="White" Text="Date for the session 2021-22"></Label>
+                </StackLayout>
+            </Grid>
+
+            <Label Grid.Row="1"  Text="Menu" TextColor="White" FontSize="18" FontAttributes="Bold"></Label>
+
+
+            <Frame Grid.Row="3"  HasShadow="True" Margin="0,70,0,0" CornerRadius="20" HeightRequest="90">
+                <Grid VerticalOptions="Center" ColumnDefinitions="*">
+                    <control:ImageButton  Grid.Row="0" Grid.Column="0"  Clicked="ImageButton_Clicked" Text="Donation List" Icon="{x:Static fontawesome:Solid.Users }" />
+               
+           
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="4" HasShadow="True" Margin="0,70,0,0" CornerRadius="20" HeightRequest="90">
+                <Grid VerticalOptions="Center" ColumnDefinitions="*">
+                    <control:ImageButton Grid.Row="0" Grid.Column="0" Clicked="ImageButton_Clicked_1" Text="Help" Icon="{x:Static fontawesome:Solid.Edit}"/>
+                 
+                    
+                </Grid>
+            </Frame>
+
+         
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

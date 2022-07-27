@@ -1,0 +1,3 @@
+C:\Users\Property365\source\repos\DataCapturing\DataCapturing\DataCapturing.Android\obj\Release\50\MonoAndroid,Version=v5.0.AssemblyAttributes.cs
+C:\Users\Property365\source\repos\DataCapturing\DataCapturing\DataCapturing.Android\obj\Release\50\build.props
+C:\Users\Property365\source\repos\DataCapturing\DataCapturing\DataCapturing.Android\obj\Release\50\adb.props
